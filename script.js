@@ -1,42 +1,29 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Courier New', monospace;
-  background: black;
-  color: #00FF00;
-  overflow-x: hidden;
+const canvas = document.getElementById('matrix');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()';
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+
+const drops = [];
+for(let x = 0; x < columns; x++) drops[x] = canvas.height;
+
+function draw() {
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = '#00FF00';
+  ctx.font = fontSize + 'px monospace';
+
+  for(let i = 0; i < drops.length; i++){
+    const text = letters[Math.floor(Math.random() * letters.length)];
+    ctx.fillText(text, i * fontSize, drops[i]);
+    drops[i] += fontSize;
+    if(drops[i] > canvas.height && Math.random() > 0.975) drops[i] = 0;
+  }
 }
 
-a {
-  color: #00FF00;
-  text-decoration: none;
-}
-
-.terminal {
-  position: relative;
-  z-index: 2;
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
-  background: rgba(0,0,0,0.7);
-  border: 2px solid #00FF00;
-  border-radius: 5px;
-}
-
-ul {
-  list-style: none;
-  padding-left: 1rem;
-}
-
-hr {
-  border: 1px solid #00FF00;
-  margin: 1rem 0;
-}
-
-/* Matrix Canvas */
-canvas#matrix {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
+setInterval(draw, 50);

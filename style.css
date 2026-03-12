@@ -1,0 +1,62 @@
+body {
+
+background:black;
+
+color:#00ff00;
+
+font-family: monospace;
+
+text-align:center;
+
+padding:20px;
+
+}
+
+
+header {
+
+margin-bottom:40px;
+
+}
+
+
+.links a {
+
+margin:10px;
+
+color:#00ff00;
+
+text-decoration:none;
+
+border:1px solid #00ff00;
+
+padding:8px;
+
+}
+
+
+section {
+
+margin:40px;
+
+}
+
+
+ul {
+
+list-style:none;
+
+padding:0;
+
+}
+
+
+.card {
+
+border:1px solid #00ff00;
+
+padding:20px;
+
+margin:20px;
+
+}

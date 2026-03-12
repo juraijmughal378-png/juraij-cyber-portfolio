@@ -1,62 +1,42 @@
 body {
-
-background:black;
-
-color:#00ff00;
-
-font-family: monospace;
-
-text-align:center;
-
-padding:20px;
-
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', monospace;
+  background: black;
+  color: #00FF00;
+  overflow-x: hidden;
 }
 
-
-header {
-
-margin-bottom:40px;
-
+a {
+  color: #00FF00;
+  text-decoration: none;
 }
 
-
-.links a {
-
-margin:10px;
-
-color:#00ff00;
-
-text-decoration:none;
-
-border:1px solid #00ff00;
-
-padding:8px;
-
+.terminal {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  background: rgba(0,0,0,0.7);
+  border: 2px solid #00FF00;
+  border-radius: 5px;
 }
-
-
-section {
-
-margin:40px;
-
-}
-
 
 ul {
-
-list-style:none;
-
-padding:0;
-
+  list-style: none;
+  padding-left: 1rem;
 }
 
+hr {
+  border: 1px solid #00FF00;
+  margin: 1rem 0;
+}
 
-.card {
-
-border:1px solid #00ff00;
-
-padding:20px;
-
-margin:20px;
-
+/* Matrix Canvas */
+canvas#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }

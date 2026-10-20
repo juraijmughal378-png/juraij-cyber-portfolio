@@ -42,6 +42,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollBar"></span></div>
 
   <!-- ===== Header ===== -->
   <header class="site-header" id="top">
@@ -69,20 +70,23 @@
   <main id="main">
     <!-- ===== Hero ===== -->
     <section class="hero" aria-labelledby="hero-title">
+      <canvas class="hero-canvas" id="particles" aria-hidden="true"></canvas>
+      <div class="orb orb-1" aria-hidden="true"></div>
+      <div class="orb orb-2" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Open to junior security roles & collaboration</p>
-          <h1 id="hero-title">Juraij Sadaqat</h1>
-          <p class="hero-role">Junior Penetration Tester <span class="sep" aria-hidden="true">·</span> Web Security & OSINT <span class="sep" aria-hidden="true">·</span> Digital Forensics</p>
+          <h1 id="hero-title">Juraij <span class="gradient-text">Sadaqat</span></h1>
+          <p class="hero-role"><span class="sr-only">Junior Penetration Tester, Web Security & OSINT, Digital Forensics, Bug Bounty & CTF Player</span><span aria-hidden="true">I'm a <strong id="typedRole">Junior Penetration Tester</strong><span class="typed-caret"></span></span></p>
           <p class="hero-lede">I test systems the way real attackers probe them — then document exactly how to defend them. Red Team Intern at <strong>Cyberster</strong>, builder of open-source security tools, and a disciplined student of offensive security.</p>
           <div class="hero-cta">
             <a class="btn" href="#projects">View my work</a>
             <a class="btn btn-ghost" href="mailto:juraijmughal378@gmail.com">Email me</a>
           </div>
           <ul class="hero-stats" aria-label="Quick facts">
-            <li><strong>18</strong><span>Public repos</span></li>
-            <li><strong>12</strong><span>Week Red Team internship</span></li>
-            <li><strong>2</strong><span>Security internships</span></li>
+            <li><strong><span class="count-up" data-count="18">18</span></strong><span>Public repos</span></li>
+            <li><strong><span class="count-up" data-count="12">12</span></strong><span>Week Red Team internship</span></li>
+            <li><strong><span class="count-up" data-count="2">2</span></strong><span>Security internships</span></li>
             <li><strong>2nd</strong><span>CTF finish</span></li>
           </ul>
         </div>
@@ -99,7 +103,8 @@
 &gt; web app security (OWASP Top 10)
 &gt; digital forensics &amp; IR
 <span class="c">$</span> ./work --evidence-first
-<span class="ok">✔ reports documented, labs isolated, ethics on</span></code></pre>
+<span class="ok">✔ reports documented, labs isolated, ethics on</span>
+<span class="term-caret" aria-hidden="true">▌</span></code></pre>
         </div>
       </div>
       <p class="ethics-note container">All testing shown here was performed in isolated lab environments or on explicitly authorized targets.</p>

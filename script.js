@@ -169,13 +169,13 @@
     W = rect.width; H = rect.height;
     canvas.width = W * DPR; canvas.height = H * DPR;
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-    var n = Math.min(90, Math.floor((W * H) / 16000));
+    var n = Math.min(115, Math.floor((W * H) / 12000));
     pts = [];
     for (var i = 0; i < n; i++) {
       pts.push({
         x: Math.random() * W, y: Math.random() * H,
         vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35,
-        r: Math.random() * 1.6 + 0.6
+        r: Math.random() * 2.1 + 1
       });
     }
   }
@@ -189,14 +189,14 @@
       if (p.y < 0 || p.y > H) p.vy *= -1;
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(94,234,212,0.75)";
+      ctx.fillStyle = "rgba(125,249,224,0.95)";
       ctx.fill();
       for (j = i + 1; j < pts.length; j++) {
         q = pts[j]; dx = p.x - q.x; dy = p.y - q.y; d = dx * dx + dy * dy;
         if (d < 12100) {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
-          ctx.strokeStyle = "rgba(56,189,248," + (0.16 * (1 - d / 12100)) + ")";
+          ctx.strokeStyle = "rgba(56,189,248," + (0.32 * (1 - d / 12100)) + ")";
           ctx.lineWidth = 1;
           ctx.stroke();
         }

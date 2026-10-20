@@ -342,3 +342,75 @@ h3{letter-spacing:-.01em}
   .gradient-text,.orb,.typed-caret,.term-caret{animation:none!important}
   .orb,.hero-canvas{display:none}
 }
+
+/* ============================================================
+   V3 — UNMISSABLE BACKGROUND (CSS-first, no JS needed)
+   ============================================================ */
+
+/* Animated aurora wash behind the whole page */
+body{
+  background:
+    radial-gradient(1100px 700px at 85% -5%, rgba(56,189,248,.07), transparent 60%),
+    radial-gradient(900px 650px at 0% 30%, rgba(45,212,191,.05), transparent 55%),
+    radial-gradient(1000px 800px at 50% 115%, rgba(167,139,250,.05), transparent 60%),
+    var(--bg);
+  background-attachment:fixed;
+}
+
+/* HERO: grid + living aurora */
+.hero{
+  background:
+    linear-gradient(rgba(94,234,212,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(94,234,212,.055) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(10,18,32,.25), rgba(11,15,22,0) 70%),
+    var(--bg);
+  background-size:46px 46px, 46px 46px, auto, auto;
+}
+.hero::before{
+  content:"";position:absolute;inset:-25% -10%;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(560px 380px at 18% 22%, rgba(45,212,191,.30), transparent 62%),
+    radial-gradient(640px 420px at 82% 12%, rgba(56,189,248,.26), transparent 62%),
+    radial-gradient(520px 380px at 55% 88%, rgba(167,139,250,.18), transparent 62%);
+  filter:blur(28px);
+  animation:aurora-drift 16s ease-in-out infinite alternate;
+}
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:120px;pointer-events:none;z-index:0;
+  background:linear-gradient(180deg, transparent, var(--bg));
+}
+@keyframes aurora-drift{
+  from{transform:translate(-3%, -2%) scale(1) rotate(0deg)}
+  to{transform:translate(3%, 3%) scale(1.14) rotate(2deg)}
+}
+
+/* Particles: fully visible now */
+.hero-canvas{opacity:.95}
+
+/* Orbs: richer and larger */
+.orb{opacity:.75;filter:blur(70px)}
+.orb-1{width:420px;height:420px;background:rgba(45,212,191,.38)}
+.orb-2{width:380px;height:380px;background:rgba(56,189,248,.30)}
+
+/* Terminal card pops against the aurora */
+.hero-card{box-shadow:0 0 0 1px rgba(45,212,191,.25),0 24px 70px rgba(0,0,0,.55),0 0 60px rgba(45,212,191,.14)}
+
+/* Name gets a stronger animated gradient */
+.gradient-text{
+  background:linear-gradient(100deg,#5eead4 5%,var(--accent) 30%,var(--accent-2) 55%,#a78bfa 85%,#5eead4 105%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  background-size:220% 100%;animation:gradient-pan 5.5s ease-in-out infinite alternate;
+  filter:drop-shadow(0 0 18px rgba(45,212,191,.25));
+}
+
+/* Section separators glow on the alt bands */
+.section-alt{
+  background:
+    radial-gradient(800px 400px at 100% 0%, rgba(56,189,248,.05), transparent 60%),
+    var(--bg-alt);
+}
+
+@media (prefers-reduced-motion:reduce){
+  .hero::before{animation:none}
+  body{background-attachment:scroll}
+}

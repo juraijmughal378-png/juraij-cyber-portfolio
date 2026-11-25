@@ -423,3 +423,7 @@ body{
 .gallery-item{background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius);padding:12px;margin:0}
 .gallery-item img{width:100%;height:auto;border-radius:var(--radius-sm);display:block}
 .gallery-item figcaption{color:var(--muted);font-size:.9rem;margin-top:10px}
+
+/* ===== CYNEX-style nebula background ===== */
+body{background-color:#050508;background-image:radial-gradient(900px 620px at 85% -5%,rgba(124,58,237,.26),transparent 60%),radial-gradient(820px 620px at -10% 100%,rgba(37,99,235,.18),transparent 60%),radial-gradient(760px 520px at 50% 115%,rgba(45,212,191,.10),transparent 60%);background-attachment:fixed}
+.section-alt{background:rgba(10,13,20,.86)}

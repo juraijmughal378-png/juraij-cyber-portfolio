@@ -416,7 +416,7 @@ body{
 }
 
 /* ===== Portfolio update: card images & galleries ===== */
-.about-img{width:100%;max-height:440px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--border);margin-bottom:26px}
+.hero-img{width:100%;max-width:400px;height:auto;border-radius:var(--radius);border:1px solid var(--border);margin-top:26px}
 .project-img{width:100%;height:180px;object-fit:cover;border-radius:var(--radius-sm);margin-bottom:14px;border:1px solid var(--border-soft)}
 .cert-img{width:100%;height:150px;object-fit:cover;border-radius:var(--radius-sm);margin-bottom:10px;border:1px solid var(--border-soft)}
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
@@ -425,5 +425,5 @@ body{
 .gallery-item figcaption{color:var(--muted);font-size:.9rem;margin-top:10px}
 
 /* ===== CYNEX-style nebula background ===== */
-body{background-color:#050508;background-image:radial-gradient(900px 620px at 85% -5%,rgba(124,58,237,.26),transparent 60%),radial-gradient(820px 620px at -10% 100%,rgba(37,99,235,.18),transparent 60%),radial-gradient(760px 520px at 50% 115%,rgba(45,212,191,.10),transparent 60%);background-attachment:fixed}
-.section-alt{background:rgba(10,13,20,.86)}
+body{background-color:#040409;background-image:radial-gradient(1100px 700px at 88% -5%,rgba(124,58,237,.50),transparent 62%),radial-gradient(950px 680px at -12% 102%,rgba(37,99,235,.34),transparent 62%),radial-gradient(820px 560px at 50% 118%,rgba(45,212,191,.13),transparent 60%);background-attachment:fixed}
+.hero{background:radial-gradient(1000px 620px at 85% -10%,rgba(124,58,237,.42),transparent 62%),radial-gradient(760px 520px at 6% 0%,rgba(37,99,235,.26),transparent 60%),transparent}.section-alt{background:rgba(7,9,15,.80)}
